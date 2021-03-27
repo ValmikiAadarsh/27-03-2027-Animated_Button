@@ -1,0 +1,53 @@
+*{
+      padding: 0;margin: 0;
+      box-sizing: border-box;
+}
+body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+}
+.BTN{
+      overflow: hidden;
+      position: relative;
+      background-color: transparent;
+      color: rgb(229, 138, 53);
+      border: 1px solid tomato;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 40px;
+      transition: 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+       /* animation: Name 2s ease-in-out infinite; */
+}
+.BTN::after{
+      content: "";
+      background: tomato;
+      position: absolute;
+      top: 0;
+      left: -1px;
+      width: 0%;
+      height: 100%;
+      z-index: -1;
+      transition: 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+}
+/* @keyframes  Name{
+      0%{
+            transform: scale(0);
+      }
+      25%{
+            transform: scale(1.2);
+      }
+      50%{transform: scale(2);}
+      60%{transform: scale(3);}
+      100%{transform: scale(1);}
+} */
+.BTN:hover {
+      color: white;
+}
+.BTN:hover::after{
+      width: calc(100% + 2px);
+}
